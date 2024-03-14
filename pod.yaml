@@ -3,17 +3,23 @@
 # metadata:     #data about object
 # spec:         #configuration of object
 
-apiversion: v1
-kind: pod
-metadata: 
-   name: My-pod
-   labels: 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
     app: my-app
-
-spec: 
-   container:
-      name: my-container
+  namespace: frontend
+spec:
+  containers:
+    - name: my-container
       image: nginx
-    ports: 
-      - containerPort: 80
-        
+      ports:
+        - containerPort: 80 
+
+    - name: tomcat-container
+      image: tomcat
+      ports: 
+        - containerPort: 8080
+...

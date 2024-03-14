@@ -1,0 +1,19 @@
+# apiVersion:   #library version 
+# kind:         #type of oject
+# metadata:     #data about object
+# spec:         #configuration of object
+
+apiversion: v1
+kind: pod
+metadata: 
+   name: My-pod
+   labels: 
+    app: my-app
+
+spec: 
+   container:
+      name: my-container
+      image: nginx
+    ports: 
+      - containerPort: 80
+        

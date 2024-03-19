@@ -73,7 +73,7 @@ metadata:
   name: my-service
 spec:
   selector:
-    app: my-app  # Label selector to match pods
+    app: my-app 
   ports:
     - protocol: TCP
       port: 80  # Port on the service

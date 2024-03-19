@@ -49,7 +49,7 @@ kind: Pod
 metadata:
   name: pod2
   labels:
-   
+  app: My-app 
   
 spec:
   containers:

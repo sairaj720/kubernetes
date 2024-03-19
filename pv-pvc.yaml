@@ -29,7 +29,7 @@ metadata:
 spec:
   containers:
   - name: container1
-    image: 
+    image: http
     volumeMounts:
     - name: pv-storage
       mountPath: /var/www/html

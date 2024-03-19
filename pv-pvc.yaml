@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-deployment
+  name: httpd-deployment
   namespace: httpd-namespace
 spec:
   replicas: 2

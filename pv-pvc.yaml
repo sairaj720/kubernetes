@@ -43,11 +43,5 @@ spec:
     image: http
     ports:
       - containerPort: 80 
-    volumeMounts:
-    - name: pv-storage
-      mountPath: /var/www/html
-  volumes:
-  - name: pv-storage
-    persistentVolumeClaim:
-      claimName: pv-claim
+
 

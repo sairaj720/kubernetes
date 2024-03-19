@@ -38,7 +38,7 @@ kind: Pod
 metadata:
   name: pod1
     labels:
-    app: my-pod
+    app: my-pod1
 spec:
   containers:
   - name: pod1-container
@@ -58,7 +58,7 @@ kind: Pod
 metadata:
   name: pod2
     labels:
-    app: my-app1
+    app: my-pod2
 spec:
   containers:
   - name: pod2-container

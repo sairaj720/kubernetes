@@ -1,34 +1,62 @@
+# PersistentVolume definition
 apiVersion: v1
-kind: Service
+kind: PersistentVolume
 metadata:
-  name: httpd-service
-  namespace: httpd-namespace
+  name: my-pv
 spec:
-  type: NodePort
-  selector:
-    app: httpd-app
-  ports:
-    - port: 80
-      targetPort: 8080
-      nodePort: 30004
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /mnt/data  # Adjust this path as per your environment
+
 ---
-apiVersion: apps/v1
-kind: Deployment
+# PersistentVolumeClaim definition
+apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: httpd-deployment
-  namespace: httpd-namespace
+  name: my-pvc
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: httpd-app
-  template:
-    metadata:
-      labels:
-        app: httpd-app
-    spec:
-      containers:
-        - name: httpd-container
-          image: httpd:latest
-          ports:
-            - containerPort: 80
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+# Pod 1 definition
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+  - name: pod1-container
+    image: nginx
+    volumeMounts:
+    - name: html-volume
+      mountPath: /var/www/html
+  volumes:
+  - name: html-volume
+    persistentVolumeClaim:
+      claimName: my-pvc
+
+---
+# Pod 2 definition
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+spec:
+  containers:
+  - name: pod2-container
+    image: nginx
+    volumeMounts:
+    - name: html-volume
+      mountPath: /var/www/html
+  volumes:
+  - name: html-volume
+    persistentVolumeClaim:
+      claimName: my-pvc

@@ -16,7 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: node-deployment
-  namespace: node-namespace-datacenter
+  namespace: httpd-namespace
 spec:
   replicas: 2
   selector:

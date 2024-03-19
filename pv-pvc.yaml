@@ -42,4 +42,19 @@ spec:
 
 ---
 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+spec:
+  containers:
+  - name: container2
+    image: your_image
+    volumeMounts:
+    - name: pv-storage
+      mountPath: /var/www/html
+  volumes:
+  - name: pv-storage
+    persistentVolumeClaim:
+      claimName: pv-claim
 

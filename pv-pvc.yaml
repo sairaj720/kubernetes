@@ -40,7 +40,7 @@ metadata:
 spec:
   containers:
   - name: container2
-    image: http
+    image: httpd
     ports:
       - containerPort: 80 
 

@@ -34,7 +34,7 @@ metadata:
 spec:
   containers:
   - name: pod1-container
-    image: nginx
+    image: httpd
     volumeMounts:
     - name: html-volume
       mountPath: /var/www/html

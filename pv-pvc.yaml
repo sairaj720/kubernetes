@@ -12,8 +12,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: manual
-  hostPath:
-    path: /mnt/data  # Adjust this path as per your environment
+  
 
  
 

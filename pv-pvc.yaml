@@ -10,7 +10,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /var/
+    path: /var/www/html
 
 ---
 # PersistentVolumeClaim definition

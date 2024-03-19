@@ -29,6 +29,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod1
+    labels:
+  app: my-app 
+  
     
 spec:
   containers:
@@ -49,7 +52,7 @@ kind: Pod
 metadata:
   name: pod2
   labels:
-  app: My-app 
+  app: my-app 
   
 spec:
   containers:

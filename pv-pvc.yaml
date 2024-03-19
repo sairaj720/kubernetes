@@ -52,7 +52,7 @@ metadata:
 spec:
   containers:
   - name: pod2-container
-    image: nginx
+    image: httpd
     volumeMounts:
     - name: html-volume
       mountPath: /var/www/html

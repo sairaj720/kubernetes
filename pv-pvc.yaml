@@ -22,3 +22,18 @@
 #     requests:
 #       storage: 10Gi
 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+  - name: container1
+    image: your_image
+    volumeMounts:
+    - name: pv-storage
+      mountPath: /var/www/html
+  volumes:
+  - name: pv-storage
+    persistentVolumeClaim:
+      claimName: pv-claim

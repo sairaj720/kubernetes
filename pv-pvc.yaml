@@ -28,7 +28,7 @@ spec:
         app: httpd-app
     spec:
       containers:
-        - name: node-container-datacenter
+        - name: httpd-container
           image: gcr.io/kodekloud/centos-ssh-enabled:node
           ports:
             - containerPort: 80

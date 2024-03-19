@@ -1,14 +1,20 @@
 # PersistentVolume definition
+# PersistentVolume definition
 apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: my-pv
 spec:
   capacity:
-    storage: 10Gi
+    storage: 1Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: /mnt/data  # Adjust this path as per your environment
+
  
 
 ---

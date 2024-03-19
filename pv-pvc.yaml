@@ -70,16 +70,4 @@ spec:
   - name: html-volume
     persistentVolumeClaim:
       claimName: my-pvc
----
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: my-service
-# spec:
-#   selector:
-#     app: my-app 
-#   ports:
-#     - protocol: TCP
-#       port: 80  # Port on the service
-#       targetPort: 80  # Port on the pods
-#   type: ClusterIP  # Expose internally only
+

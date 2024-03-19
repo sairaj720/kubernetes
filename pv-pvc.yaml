@@ -25,7 +25,7 @@ spec:
   template:
     metadata:
       labels:
-        app: node-app-datacenter
+        app: httpd-app
     spec:
       containers:
         - name: node-container-datacenter

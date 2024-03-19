@@ -8,7 +8,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /path/to/persistent/storage
+    path: /var/www
 
 ---
 apiVersion: v1

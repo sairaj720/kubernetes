@@ -30,6 +30,8 @@ spec:
   containers:
   - name: container1
     image: http
+    ports:
+            - containerPort: 80 
     volumeMounts:
     - name: pv-storage
       mountPath: /var/www/html

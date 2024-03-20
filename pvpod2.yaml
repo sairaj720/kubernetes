@@ -17,6 +17,6 @@ spec:
         - containerPort: 80
           name: "http-server"
       volumeMounts:
-        - mountPath: "/usr"
+        - mountPath: "/usr/"
           name: my-pvc
 ...
